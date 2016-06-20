@@ -156,15 +156,13 @@ print(secondForLoop)
 //底部是传统写法
 
 
-//函数和闭包
-
+//函数
 func createhousenumber(name:String,address:String) ->String{
     return "ET450\(name)\(address)20"
 }
 createhousenumber(name: "chenkai", address: "chaoyangDist")
 
 //多个返回值
-
 func calculateStatistics (scores: [Int]) ->(min:Int,max:Int,sum:Int){
     var min = scores[0]
     var max = scores[0]
@@ -184,10 +182,91 @@ let result = calculateStatistics(scores: [1,6,4,9,8,22,19])
 print("max value is \(result.max)")
 print("sum value is \(result.2)")
 
+//参数个数可变
+func sumof (numbers:Int...) ->Int{
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+sumof(numbers: 42,132,12)
+
+func agvof (numbers:Int...) ->Int{
+    var count = 0
+    var sum = 0
+    for number in numbers {
+        count += 1
+        sum += number
+    }
+    return sum/count
+}
+agvof(numbers: 12,56,32,45)
+
+//函数嵌套
+func returnFifteen () -> Int{
+    var y = 20
+    func add() {
+        y += 5
+    }
+    add()
+    return y
+}
+returnFifteen()
+//函数可以嵌套,被嵌套的函数可以访问外侧函数的变量，重构一个太长或者太复杂的函数.
+//可以在行数中进行重构整理一款地理的业务流程.
 
 
 
 
+//函数作为返回值
+func createreport () -> ((Int) -> Int){
+    func addone (number:Int) -> Int{
+        return 1 + number
+    }
+    return addone
+}
+var definevalue = createreport()
+definevalue(12)
+//cratereport函数返回值为，一个参数为Int 返回值为Int 类型的函数.
+
+func getusertype (type:String) -> ((String) -> String){
+    var rangearg = 0.1
+    if type.isEmpty {
+        rangearg = 0.5
+    }else if type == "highlevel"{
+        rangearg = 0.8
+    }
+    
+    func spiltgroup (groupname:String) -> String{
+        return "spilt out \(groupname) kit \(rangearg)"
+    }
+    return spiltgroup
+}
+
+var changevalue = getusertype(type: "highlevel")
+changevalue("kai'document")
+
+
+
+//函数作为参数值
+func hasAnyMatch (list:[Int],condition:(Int) -> Bool) -> Bool{
+    for item in list{
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+
+func lessThanTen (number: Int) -> Bool{
+    return number < 10;
+}
+
+var numbers = [10,15,8,18]
+hasAnyMatch(list: numbers, condition: lessThanTen)
+
+//闭包尚未查看.
 
 
 
