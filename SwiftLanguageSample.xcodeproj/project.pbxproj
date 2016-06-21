@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D64DCA641D19059A005B78D8 /* BasicPart.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = BasicPart.playground; path = Syntax/BasicPart.playground; sourceTree = SOURCE_ROOT; };
 		D66738A21D11459500FA7039 /* SwiftLanguageSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLanguageSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66738A51D11459500FA7039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66738A71D11459500FA7039 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D64DCA631D190533005B78D8 /* Syntax */ = {
+			isa = PBXGroup;
+			children = (
+				D64DCA641D19059A005B78D8 /* BasicPart.playground */,
+			);
+			name = Syntax;
+			sourceTree = "<group>";
+		};
 		D66738991D11459500FA7039 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +66,7 @@
 		D66738A41D11459500FA7039 /* SwiftLanguageSample */ = {
 			isa = PBXGroup;
 			children = (
+				D64DCA631D190533005B78D8 /* Syntax */,
 				D66738A51D11459500FA7039 /* AppDelegate.swift */,
 				D66738A71D11459500FA7039 /* ViewController.swift */,
 				D66738A91D11459500FA7039 /* Main.storyboard */,
